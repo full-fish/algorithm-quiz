@@ -5,10 +5,9 @@ function solution1(str) {
   for (let i = 0; i < str.length; i++) {
     if (str[i] === '(') stack.push(str[i])
     else {
-      if (str[i - 1] === '(') {
-        stack.pop()
-        num += stack.length * 2
-      } else stack.pop()
+      stack.pop()
+      if (str[i - 1] === '(') num += stack.length
+      else num++
     }
   }
   return num
@@ -28,3 +27,5 @@ function solution2(s) {
   }
   return answer
 }
+console.log(solution1(str))
+console.log(solution2(str))
