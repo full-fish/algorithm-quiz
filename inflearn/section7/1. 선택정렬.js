@@ -9,7 +9,7 @@ function solution1(arr) {
   }
   return arr
 }
-//! 레퍼런스
+//! 레퍼런스 내꺼가 더 나음
 function solution2(arr) {
   let answer = arr
   for (let i = 0; i < arr.length; i++) {
