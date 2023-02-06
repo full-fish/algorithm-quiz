@@ -29,4 +29,5 @@ function solution2(arr) {
   }
   return answer
 }
-// test
+console.log(solution1(d))
+console.log(solution2(d))
