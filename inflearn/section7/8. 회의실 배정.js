@@ -10,6 +10,20 @@ let arr2 = [
   [1, 3],
   [2, 3],
 ]
+let arr3 = [
+  [1, 5],
+  [3, 7],
+  [2, 5],
+  [3, 8],
+  [1, 4],
+]
+let arr4 = [
+  [2, 6],
+  [6, 7],
+  [1, 5],
+  [4, 8],
+  [3, 6],
+]
 function solution1(arr) {
   let newArr = arr.sort((a, b) => (a[0] === b[0] ? a[1] - b[1] : a[0] - b[0]))
   let max = 0
@@ -46,3 +60,12 @@ function solution2(meeting) {
 }
 console.log(solution1(arr))
 console.log(solution2(arr))
+
+console.log(solution1(arr2))
+console.log(solution2(arr2))
+
+console.log(solution1(arr3))
+console.log(solution2(arr3))
+
+console.log(solution1(arr4))
+console.log(solution2(arr4))
