@@ -19,7 +19,7 @@ function solution1(a) {
   }
   return result
 }
-//! 레퍼런스
+//! 레퍼런스 아이디어 좋음
 function solution2(arr) {
   let answer = []
   let sortArr = arr.slice()

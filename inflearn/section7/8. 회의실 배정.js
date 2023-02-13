@@ -1,9 +1,18 @@
+// let arr = [
+//   [1, 4],
+//   [1, 3],
+//   [1, 1],
+//   [1, 2],
+//   [3, 3],
+//   [2, 3],
+//   [3, 5],
+//   [4, 6],
+//   [5, 7],
+// ]
 let arr = [
-  [1, 4],
+  [3, 3],
   [2, 3],
-  [3, 5],
-  [4, 6],
-  [5, 7],
+  [1, 3],
 ]
 let arr2 = [
   [3, 3],
@@ -58,14 +67,14 @@ function solution2(meeting) {
   }
   return answer
 }
-console.log(solution1(arr))
+// console.log(solution1(arr))
 console.log(solution2(arr))
 
-console.log(solution1(arr2))
-console.log(solution2(arr2))
+// console.log(solution1(arr2))
+// console.log(solution2(arr2))
 
-console.log(solution1(arr3))
-console.log(solution2(arr3))
+// console.log(solution1(arr3))
+// console.log(solution2(arr3))
 
-console.log(solution1(arr4))
-console.log(solution2(arr4))
+// console.log(solution1(arr4))
+// console.log(solution2(arr4))
