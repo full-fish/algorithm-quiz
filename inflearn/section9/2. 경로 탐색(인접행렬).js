@@ -1,4 +1,15 @@
 let n = 5
+let arr = [
+  [1, 2],
+  [1, 3],
+  [1, 4],
+  [2, 1],
+  [2, 3],
+  [2, 5],
+  [3, 4],
+  [4, 2],
+  [4, 5],
+]
 function solution1(n, arr) {
   let result = 0
   let graphArr = Array.from({ length: n }, () => Array(n).fill(0))
