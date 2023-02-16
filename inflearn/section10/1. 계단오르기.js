@@ -1,8 +1,6 @@
 let n = 7
 function solution1(n) {
-  function re(L, memo = { 1: 1, 2: 2 }) {
-    return L in memo ? memo[L] : (memo[L] = re(L - 1, memo) + re(L - 2, memo))
-  }
+  const re = (L, memo = { 1: 1, 2: 2 }) => (L in memo ? memo[L] : (memo[L] = re(L - 1, memo) + re(L - 2, memo)))
   return re(n)
 }
 //! 레퍼런스
@@ -17,3 +15,5 @@ function solution2(n) {
   answer = dy[n]
   return answer
 }
+console.log(solution1(n))
+console.log(solution2(n))
