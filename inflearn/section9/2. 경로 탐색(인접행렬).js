@@ -18,6 +18,8 @@ function solution1(n, arr) {
   arr.forEach(ele => {
     graphArr[ele[0] - 1][ele[1] - 1] = 1
   })
+  console.log(graphArr)
+
   function DFS(i, visited) {
     if (i === n - 1) {
       return result++
@@ -98,3 +100,4 @@ function solution3(n, arr) {
   DFS(0)
   return answer
 }
+console.log(solution1(n, arr))
