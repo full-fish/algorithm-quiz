@@ -37,10 +37,47 @@ function solution2(n) {
   DFS(n, [])
   return answer
 }
-console.log(
-  solution([
-    [1, 2, 3, 5],
-    [5, 6, 7, 8],
-    [4, 3, 2, 1],
-  ])
-)
+let land = [
+  [1, 2, 6, 7],
+  [2, 3, 10, 8],
+  [1, 3, 9, 4],
+  [7, 11, 9, 4],
+]
+function solution3(land) {
+  const dpArr = land[0]
+  const position = [0, 1, 2, 3]
+  for (let i = 1; i < land.length; i++) {
+    for (let j = 0; j < land[0].length; j++) {
+      const copyArr = land[i].slice()
+      copyArr.splice(position[j], 1)
+      const max = Math.max(...copyArr)
+      position[j] = land[i].indexOf(max)
+      dpArr[j] += max
+    }
+    console.log(dpArr, position)
+  }
+  return Math.max(...dpArr)
+}
+//! 이거임
+function solution4(land) {
+  let dpArr = land[0]
+  for (let i = 1; i < land.length; i++) {
+    let tempArr = new Array(4)
+    for (let j = 0; j < land[0].length; j++) {
+      const copyDpArr = dpArr.slice()
+      copyDpArr.splice(j, 1)
+      const max = Math.max(...copyDpArr)
+      tempArr[j] = max + land[i][j]
+    }
+    dpArr = tempArr
+  }
+  return Math.max(...dpArr)
+}
+console.log(solution4(land))
+// console.log(
+//   solution3([
+//     [1, 2, 3, 5],
+//     [5, 6, 7, 8],
+//     [4, 3, 2, 1],
+//   ])
+// )
