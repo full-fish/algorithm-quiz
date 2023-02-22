@@ -13,3 +13,4 @@ function solution(word) {
   result.sort()
   return result.indexOf(word) + 1
 }
+//
