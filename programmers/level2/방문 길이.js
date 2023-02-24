@@ -8,8 +8,9 @@ function solution(dirs) {
     const nextX = now[0] + obj[dirs[i]][0]
     const nextY = now[1] + obj[dirs[i]][1]
     const dis = now.join('') + `${nextX}${nextY}`
+    const reverseDis = `${nextX}${nextY}` + now.join('')
     if (nextX <= 5 && nextY <= 5 && nextX >= -5 && nextY >= -5) {
-      if (!check.includes(dis.split('').reverse().join('')) && !check.includes(dis)) {
+      if (!check.includes(reverseDis) && !check.includes(dis)) {
         check.push(dis)
         result++
       }
