@@ -2,20 +2,22 @@ function solution(numbers) {
   let result = []
   let count = 0
   let arr = numbers.split('')
-  console.log(arr)
+  const len = numbers.length
   function DFS(n, str) {
     if (n === 0) return result.push(str)
-    for (let i = 0; i < arr.length; i++) {
+    for (let i = 0; i < len; i++) {
       DFS(n - 1, str.concat(arr[i]))
     }
   }
-  //   for (let i = 1; i <= numbers.length; i++) {
-  //     DFS(i, '')
-  //   }
-  DFS(3, '')
-  console.log(result)
+  DFS(len, '')
+
+  result = [...new Set(result)]
+  // console.log(result)
   result.forEach(ele => {
-    if (isPrime(Number(ele))) count++
+    if (isPrime(Number(ele))) {
+      console.log(ele)
+      count++
+    }
   })
   return count
 }
@@ -28,4 +30,4 @@ function isPrime(num) {
   }
   return true
 }
-console.log(solution('011'))
+console.log(solution('1231'))
