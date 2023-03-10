@@ -1,3 +1,4 @@
+//! DFS로 k번쨰까지 찾기
 function solution1(n, k) {
   let result = []
   let ch = Array.from({ length: n }, () => 0)
@@ -24,6 +25,7 @@ function solution1(n, k) {
   DFS(0)
   return result
 }
+//! 바로 찾기
 function solution(n, k) {
   let arr = [...new Array(n).keys()].map(e => e + 1)
   let result = []
@@ -38,15 +40,12 @@ function solution(n, k) {
         break
       }
     }
-    result.push(...arr.splice(Math.ceil(k / factorial(i)) - 1, 1))
-    // k = Math.floor(k / factorial(i))
-    console.log(arr)
+    const r = Math.ceil(k / factorial(i))
+    result.push(...arr.splice(r - 1, 1))
+    k = k - (r - 1) * factorial(i)
   }
   return result
 }
 function factorial(n) {
   return n ? n * factorial(n - 1) : 1
-}
-for (let i = 1; i <= 24; i++) {
-  console.log(i, solution(4, i))
 }
