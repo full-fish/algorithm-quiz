@@ -14,10 +14,10 @@ function solution(m, n, startX, startY, balls) {
     const [targetX, targetY] = ball
     let deX = Math.abs(startX - targetX)
     let deY = Math.abs(startY - targetY)
-    let o = n / m
+    // let o = n / m
     let a = Number.MAX_SAFE_INTEGER
     let b = Number.MAX_SAFE_INTEGER
-    let c = Number.MAX_SAFE_INTEGER
+    // let c = Number.MAX_SAFE_INTEGER
     if (deY === 0) {
       if (startX < targetX) a = (startX + targetX) ** 2
       else a = (m - startX + (m - targetX)) ** 2
@@ -25,16 +25,17 @@ function solution(m, n, startX, startY, balls) {
       if (startY < targetY) a = (startY + targetY) ** 2
       else a = (n - startY + (n - targetY)) ** 2
     }
-    if (-1 * o * startX + n === startY && -1 * o * targetX + n === targetY) {
-      if (startX <= targetX) c = (targetX + startX) ** 2 + (n - startY + (n - targetY)) ** 2
-      else c = (m - startX + (m - targetX)) ** 2 + (startY + targetY) ** 2
-    } else if (o * startX === startY && o * targetX === targetY) {
-      if (startX <= targetX) c = (startX + targetX) ** 2 + (startY + targetY) ** 2
-      else c = (m - startX + (m - targetX)) ** 2 + (n - startY + (n - targetY)) ** 2
-    }
+    // if (-1 * o * startX + n === startY && -1 * o * targetX + n === targetY) {
+    //   if (startX <= targetX) c = (targetX + startX) ** 2 + (n - startY + (n - targetY)) ** 2
+    //   else c = (m - startX + (m - targetX)) ** 2 + (startY + targetY) ** 2
+    // } else if (o * startX === startY && o * targetX === targetY) {
+    //   if (startX <= targetX) c = (startX + targetX) ** 2 + (startY + targetY) ** 2
+    //   else c = (m - startX + (m - targetX)) ** 2 + (n - startY + (n - targetY)) ** 2
+    // }
     if (deX !== 0) b = Math.min(deX ** 2 + (n - startY + (n - targetY)) ** 2, deX ** 2 + (startY + targetY) ** 2)
     if (deY !== 0) b = Math.min(deY ** 2 + (m - startX + (m - targetX)) ** 2, deY ** 2 + (startX + targetX) ** 2, b)
-    result.push(Math.min(a, b, c))
+    // result.push(Math.min(a, b, c))
+    result.push(Math.min(a, b))
   })
   return result
 }
