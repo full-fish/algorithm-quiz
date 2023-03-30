@@ -17,10 +17,13 @@ function solution(k, ranges) {
   }
   arr.push([x, k])
   for (let i = 0; i < arr.length - 1; i++) {
-    const a = arr[i + 1][1] - arr[i + 1][0]
+    const a = (arr[i + 1][1] - arr[i][1]) / (arr[i + 1][0] - arr[i][0])
+    const c = -(arr[i][0] * a) + arr[i][1]
+    let tt = (a / 2) * arr[i + 1][0] ** 2 + c * arr[i + 1][0] - ((a / 2) * arr[i][0] ** 2 + c * arr[i][0])
+    sum += tt
+    console.log('tt', tt)
   }
+  console.log(sum)
   return arr
 }
 console.log(solution(k, ranges))
-// [33.0,31.5,0.0,-1.0]
-console.log(5 + 16 + 8 + 4 + 2 + 1)
