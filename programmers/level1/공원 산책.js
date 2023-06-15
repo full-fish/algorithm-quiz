@@ -21,7 +21,7 @@ function solution(park, routes) {
                 break;
         }
         while (distance) {
-            temp = [temp[0] + dx[dxdyIndex], temp[1] + dy[dxdyIndex]]
+            temp = [temp[0] + dy[dxdyIndex], temp[1] + dx[dxdyIndex]]
             if (park[temp[0]]?.[temp[1]] === undefined || park[temp[0]]?.[temp[1]] === 'X') {
                 temp = now.slice()
                 break
