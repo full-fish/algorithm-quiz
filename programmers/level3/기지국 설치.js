@@ -41,3 +41,19 @@ function solution(n, stations, w) {
     else return 0
     return count;
 }
+//! 인덱스만으로 푼것
+function solution(n, stations, w) {
+    let index = 0
+    let target = 0
+    let count = 0
+    stations.forEach((e) => {
+        target = e - w - 1
+        let sub = target - index
+        count += Math.ceil(sub / (2 * w + 1))
+        index = e + w
+    })
+    target = n
+    let sub = target - index
+    count += Math.ceil(sub / (2 * w + 1))
+    return count
+}
