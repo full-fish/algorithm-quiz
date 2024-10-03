@@ -30,3 +30,4 @@ function solution2(c, arr) {
   DFS(0, 0)
   return answer
 }
+console.log(solution1(arr, limit));

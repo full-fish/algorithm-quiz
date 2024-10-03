@@ -38,3 +38,17 @@ function solution2(n) {
   DFS(1)
   return answer
 }
+
+
+function solution3(arr, n) {
+  let result = []
+  function combination(n, tempArr, index) {
+    if (n === 0) return result.push(tempArr)
+    for (let i = index; i < arr.length; i++) {
+      combination(n - 1, tempArr.concat(arr[i]), i)
+    }
+  }
+  combination(n, [], 0)
+  return result
+}
+console.log(solution3([1, 2, 3, 4], 3));
