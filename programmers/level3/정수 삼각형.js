@@ -9,3 +9,4 @@ function solution(triangle) {
   return triangle[0][0]
 }
 console.log(solution(triangle));
+

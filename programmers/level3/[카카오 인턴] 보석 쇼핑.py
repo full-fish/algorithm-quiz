@@ -54,7 +54,6 @@ gems4 = ["ZZZ", "YYY", "NNNN", "YYY", "BBB"]
 
 def solution(gems):
     gems_len = len(gems)
-    # 객체 생성
     gem_kind_len = len(set(gems))
 
     result_obj = {}
