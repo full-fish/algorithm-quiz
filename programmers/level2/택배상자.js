@@ -21,3 +21,12 @@ function solution(order) {
   return count
 }
 console.log(solution(order))
+
+// 1 2 3 4 5
+// 메인 5 
+// 보조 1 2 
+// 트럭 4 3
+
+// 1 2 3 4 5
+// 메인 5 4 3 2 1
+// 보조 1 2 3 4 5
