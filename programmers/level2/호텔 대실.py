@@ -13,16 +13,17 @@ sort후 나가는 시간만
 
 
 def solution(book_time):
-    def time_to_minutes(time):
+    def time_to_minutes(time, time_type):
         a, b = map(int, time.split(":"))
-        return a * 60 + b + 10
+        time = a * 60 + b
+        return time + 10 if time_type == "E" else time
 
     book_time_changed = sorted(
-        [[time_to_minutes(x[0]), time_to_minutes(x[1])] for x in book_time],
+        [[time_to_minutes(x[0], "S"), time_to_minutes(x[1], "E")] for x in book_time],
         key=lambda x: (x[0], x[1]),
     )
     heap = []
-    for book_index, book_ele in enumerate(book_time_changed):
+    for _, book_ele in enumerate(book_time_changed):
         if not (heap):
             heap.append(book_ele[1])
         else:
